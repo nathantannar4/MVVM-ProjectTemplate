@@ -18,7 +18,7 @@ Through the use of generics and view models, your controllers can be kept very c
 
 Let's take a look at a more basic controller for an End-User-License Agreement. We specify the `EULAView` as the generic for `IView` and it becomes the view that the controller manages. All that's left is to bind with RxSwift to the various elements. This abstracts the view and leaves the controller to do its job as just being the glue between the view model and the view.
 
-```
+```swift
 final class EULAController: ViewModelController<EULAViewModel, EULAView> {
 
     // MARK: - View Life Cycle
@@ -51,7 +51,7 @@ final class EULAController: ViewModelController<EULAViewModel, EULAView> {
 
 So whats `IView` you might ask? It's simply a protocol that can give you access to all the regular view lifecycle methods a `UIViewController` would have.
 
-```
+```swift
 protocol IView: Interface, Class where Self: UIView {
     func viewDidLoad()
     func viewWillAppear(_ animated: Bool)
